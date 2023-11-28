@@ -2,19 +2,22 @@ package org.java.spring;
 
 public class Movie {
 	
-	private static int nextId = 1;
 	private int id;
 	private String title;
 	
-	public Movie(String title) {
-		this.id = nextId;
-		nextId++;
+	public Movie(int id, String title) {
+		
+		setId(id);
 		setTitle(title);
 	}
 	
 	
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getTitle() {

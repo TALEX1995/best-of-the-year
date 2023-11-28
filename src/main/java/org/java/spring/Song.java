@@ -2,19 +2,23 @@ package org.java.spring;
 
 public class Song {
 	
-	private static int nextId = 1;
+	
 	private int id;
 	private String title;
 	
-	public Song(String title) {
-		this.id = nextId;
-		nextId++;
+	public Song(int id, String title) {
+		
+		setId(id);
 		setTitle(title);
 	}
 	
 	
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public String getTitle() {
