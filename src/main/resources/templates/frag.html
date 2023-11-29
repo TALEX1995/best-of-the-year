@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<a 
+		th:fragment="url(link, title)" 
+		th:href="${link}" 
+		th:text="${title}">
+		</a>
+	
+	<header 
+			th:fragment="header()">
+		<div>
+			<a class="btn btn-primary m-2" th:href="@{http://localhost:8080}">Home</a>
+			<a class="mx-3 my-2 btn btn-secondary"th:href="@{http://localhost:8080/movies}">Movies</a>
+			<a class="btn btn-warning m-2" th:href="@{http://localhost:8080/songs}">Songs</a>
+		</div>
+	</header>
+	
+</body>
+</html>

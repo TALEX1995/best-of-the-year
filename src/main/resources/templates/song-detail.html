@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Titolo della canzone con id: [[${id}]]</h1>
-	<p>[[${songTitle}]]</p>
+	<header th:replace="frag :: header"></header>
+	<h1>Titolo del film con id: [[${song.id}]]</h1>
+	<p>[[${song.title}]]</p>
 </body>
 </html>

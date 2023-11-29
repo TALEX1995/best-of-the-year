@@ -60,12 +60,8 @@ public class MainController {
 		
 		List<Movie> listMovies = getBestMovie();
 		
-		String movies = "";
-		for(Movie movie: listMovies) {
-			movies += movie.getTitle() + ", ";
-		}
 		
-		model.addAttribute("movies", movies);
+		model.addAttribute("movies", listMovies);
 		
 		
 		return "movies";
@@ -76,12 +72,8 @@ public class MainController {
 		
 		List<Song> listSongs = getBestSongs();
 		
-		String songs = "";
-		for(Song song: listSongs) {
-			songs += song.getTitle() + ", ";
-		}
 		
-		model.addAttribute("songs", songs);
+		model.addAttribute("songs", listSongs);
 		
 		return "songs";
 	}
@@ -91,14 +83,15 @@ public class MainController {
 		
 		List<Movie> listMovies = getBestMovie();
 		
-		String movieIdTitle = null;
-		for(Movie movie: listMovies) {
-			if(movie.getId() == id) {
-				movieIdTitle = movie.getTitle();
+		Movie movie = null;
+		for(Movie m: listMovies) {
+			if(m.getId() == id) {
+				movie = m;
+				break;
 			}
 		}
 	
-		model.addAttribute("movieTitle", movieIdTitle);
+		model.addAttribute("movie", movie);
 		model.addAttribute("id", id);
 		return "movie-detail";
 	}
@@ -108,14 +101,15 @@ public class MainController {
 		
 		List<Song> listSongs = getBestSongs();
 		
-		String songIdTitle = null;
-		for(Song song: listSongs) {
-			if(song.getId() == id) {
-				songIdTitle = song.getTitle();
+		Song song = null;
+		for(Song s : listSongs) {
+			if(s.getId() == id) {
+				song = s;
+				break;
 			}
 		}
 	
-		model.addAttribute("songTitle", songIdTitle);
+		model.addAttribute("song", song);
 		model.addAttribute("id", id);
 		return "song-detail";
 	}

@@ -6,7 +6,6 @@ public class Movie {
 	private String title;
 	
 	public Movie(int id, String title) {
-		
 		setId(id);
 		setTitle(title);
 	}

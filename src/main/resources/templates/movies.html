@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
 <title>Insert title here</title>
 </head>
 <body>
+	<header th:replace="frag :: header"></header>
 	<h1>I migliori film</h1>
-	<p>[[${movies}]]</p>
+	
+	<ul>
+		<li th:each="movie : ${movies}">
+			<span class="me-2" th:text="${movie.title}"></span>
+			<a th:replace="frag :: url(@{/movies/{id}(id=${movie.id})}, 'Dettaglio')"></a>
+		</li>	
+	</ul>
+	
+	
+	
+	
+	
 </body>
 </html>
